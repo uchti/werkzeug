@@ -97,7 +97,7 @@ class HTTPException(Exception):
             def __init__(self, arg=None, *args, **kwargs):
                 cls.__init__(self, *args, **kwargs)
                 exception.__init__(self, arg)
-        newcls.__module__ = sys._getframe(1).f_globals.get('__name__')
+        # newcls.__module__ = sys._getframe(1).f_globals.get('__name__')
         newcls.__name__ = name or cls.__name__ + exception.__name__
         return newcls
 
